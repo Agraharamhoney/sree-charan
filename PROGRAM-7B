@@ -1,17 +1,23 @@
+
 #include <iostream>
 using namespace std;
-class Sample {
-int x;
+class Employee {
 public:
-void getData(){ cout << "Enter number: "; cin >> x; }
-void operator -(){ x = -x; }
-
-void show(){ cout << "Value: " << x << endl; }
+string name;
+void getName(){ cout << "Enter name: "; cin >> name; }
 };
+class Salary {
+public:
+float sal;
+void getSal(){ cout << "Enter salary: "; cin >> sal; }
+};
+class Manager : public Employee, public Salary {
+public:
+void show(){ cout << "Name: " << name << ", Salary: " << sal << endl; }
+};
+
 int main() {
-Sample s;
-s.getData();
--s;
-s.show();
+Manager m;
+m.getName(); m.getSal(); m.show();
 return 0;
 }
