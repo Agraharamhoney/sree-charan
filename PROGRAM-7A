@@ -1,17 +1,18 @@
 #include <iostream>
 using namespace std;
-class Sample {
-int x;
+class Person {
 public:
-void getData(){ cout << "Enter number: "; cin >> x; }
-void operator -(){ x = -x; }
-
-void show(){ cout << "Value: " << x << endl; }
+string name;
+void getName(){ cout << "Enter name: "; cin >> name; }
+};
+class Student: public Person {
+public:
+int roll;
+void getRoll(){ cout << "Enter roll: "; cin >> roll; }
+void display(){ cout << name << ", " << roll << endl; }
 };
 int main() {
-Sample s;
-s.getData();
--s;
-s.show();
+Student s;
+s.getName(); s.getRoll(); s.display();
 return 0;
 }
